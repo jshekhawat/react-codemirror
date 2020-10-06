@@ -12,7 +12,9 @@
   ],
   "author": "jshekhawat",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    
+  },
   "peerDependencies": {
     "codemirror": "^5.58.1",
     "react": "^16.13.1"
