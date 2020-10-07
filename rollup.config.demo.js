@@ -8,11 +8,12 @@ import postcss from 'rollup-plugin-postcss'
 export default {
     input: 'demo/index.js',
     output: {
-        dir: 'dist',
+        dir: 'public',
         inlineDynamicImports: true,   
         format: 'cjs',
         sourcemap: true,
-        external: ["react",
+        external: [
+            "react",
             "react-dom",
             "codemirror"
         ]

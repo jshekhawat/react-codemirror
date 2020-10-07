@@ -4,12 +4,13 @@
   "description": "A react wrapper for codemirror",
   "main": "index.js",
   "scripts": {
-    "dev": "node_modules/.bin/rollup --config ./rollup.config.demo.js -w & node_modules/.bin/serve ./dist",
+    "dev": "node_modules/.bin/rollup --config ./rollup.config.demo.js -w & node_modules/.bin/serve ./public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "codemirror",
-    "codeeditor"
+    "react",
+    "editor"
   ],
   "author": "jshekhawat",
   "license": "MIT",
