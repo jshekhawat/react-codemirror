@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react'
 import CodeMirrorDep from 'codemirror'
+import './codemirror.css'
 
 
 const CodeMirror = (props) => {
