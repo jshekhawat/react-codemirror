@@ -4,17 +4,19 @@ import commonjs from '@rollup/plugin-commonjs'
 import replace from '@rollup/plugin-replace'
 import postcss from 'rollup-plugin-postcss'
 
+
 export default {
     input: 'demo/index.js',
     output: {
-        file: 'demo/bundle.js',
+        dir: 'dist',
+        inlineDynamicImports: true,   
         format: 'cjs',
-        sourcemap: true
-    },
-    externals: [
-        "react",
-        "react-dom"
-    ],
+        sourcemap: true,
+        external: ["react",
+            "react-dom",
+            "codemirror"
+        ]
+    },  
     plugins: [
         replace({
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
@@ -22,7 +24,8 @@ export default {
         resolve(),
         postcss(),
         babel({
-            exclude: 'node_modules/**'         
+            exclude: 'node_modules/**',
+            babelHelpers: 'bundled'         
         }),
         commonjs(),
     ]
