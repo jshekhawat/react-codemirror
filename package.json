@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node_modules/.bin/rollup --config ./rollup.config.demo.js -w & node_modules/.bin/serve ./public",
+    "codegen": "node build-modes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
