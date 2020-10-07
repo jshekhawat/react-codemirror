@@ -10,7 +10,7 @@ export default {
         format: 'cjs',
         sourcemap: true
     },
-    external: [
+    externals: [
         "react",
         "react-dom"
     ],
