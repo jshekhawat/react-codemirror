@@ -4,6 +4,7 @@
   "description": "A react wrapper for codemirror",
   "main": "index.js",
   "scripts": {
+    "dev": "node_modules/.bin/rollup --config ./rollup.config.demo.js -w & node_modules/.bin/serve ./demo",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,11 +14,14 @@
   "author": "jshekhawat",
   "license": "MIT",
   "dependencies": {
-    
+    "codemirror": "^5.58.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "peerDependencies": {
     "codemirror": "^5.58.1",
-    "react": "^16.13.1"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

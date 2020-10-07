@@ -3,12 +3,20 @@ import CodeMirrorDep from 'codemirror'
 
 
 const CodeMirror = ({}) => {
-    const editorInst = useState()
+    const editorInst = useState({})
     const editorRef = useRef()
         
 
-    useEffect(() => {
-        CodeMirrorDep.fromTextArea(editorRef.current)
+    useEffect(() => {        
+        if (!!editorInst) 
+            editorInst = CodeMirrorDep.fromTextArea(editorRef.current)
+
+        
+
+        //cleanup
+        return () => {
+            editorInst = undefined
+        }
     }, [])
 
     return (<textarea ref={editorRef}/>)
