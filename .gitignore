@@ -1,4 +1,4 @@
 node_modules
 /demo/bundle.*
-dist/index.j*
+dist/*
 public/index.j*
