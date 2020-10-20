@@ -1,14 +1,19 @@
-import React, {useEffect, useMemo, useRef, useState} from 'react'
+import React, {useEffect, useMemo, useRef, useState, useImperativeHandle} from 'react'
 import CodeMirrorDep from 'codemirror'
 import loadMode from './modes'
 import 'codemirror/mode/meta'
 import './codemirror.css'
 
 
-const CodeMirror = (props) => {
+const CodeMirror = (props, ref) => {
     const {width, height, mode, value, ...options} = props
     const [editorInst, setInstance] = useState()
     const editorRef = useRef()       
+
+    useImperativeHandle(ref, () => ({
+        editorInst
+    }), [editorInst])
+
 
     useEffect(() => {        
         if (!editorInst) {            
@@ -45,4 +50,4 @@ const CodeMirror = (props) => {
     return (<textarea ref={editorRef}/>)
 }
 
-export default CodeMirror
+export default React.forwardRef(CodeMirror)
